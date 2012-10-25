@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+"use strict";
+var fd = require('../');
+
+fd(process.env.PWD).then(function(deps){
+    console.log(JSON.stringify(deps, null, 4));
+});

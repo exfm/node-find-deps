@@ -1,0 +1,18 @@
+{
+    "name": "find-deps",
+    "version": "0.0.1",
+    "description": "Little helper tool for printing the name and latest version of all modules your code needs.",
+    "author": "Lucas Hrabovsky",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/exfm/node-find-deps.git"
+    },
+    "dependencies": {
+        "esprima": "1.0.0",
+        "request": "2.11.4",
+        "when": "1.5.2"
+    },
+    "bin": {
+        "find-deps": "./bin/find-deps"
+    }
+}

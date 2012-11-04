@@ -62,7 +62,7 @@ function parseFile(filename){
         tree.body.forEach(function(node){
             if(node.type === "VariableDeclaration"){
                 node.declarations.forEach(function(decl){
-                    if(decl.init.type === "CallExpression" &&
+                    if(decl.init && decl.init.type === "CallExpression" &&
                         decl.init.callee.name === "require" &&
                         decl.init['arguments'][0].value.indexOf('/') === -1){
                         requiredModules[filename].push(decl.init['arguments'][0].value);

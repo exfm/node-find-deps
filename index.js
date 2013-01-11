@@ -56,6 +56,7 @@ function parseFile(filename){
         tree;
 
     fs.readFile(filename, 'utf-8', function(err, data){
+        try{
         tree = esprima.parse(data.toString());
         requiredModules[filename] = [];
 
@@ -70,6 +71,10 @@ function parseFile(filename){
                 });
             }
         });
+        }
+        catch(e){
+            console.error("Error in `" + filename + "`: "+ e);
+        }
         d.resolve(filename);
     });
     return d.promise;
